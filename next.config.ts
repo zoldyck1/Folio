@@ -11,8 +11,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'picsum.photos',
+        protocol: 'https', hostname: 'drive.google.com',
         port: '',
         pathname: '/**',
       },
@@ -21,3 +20,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

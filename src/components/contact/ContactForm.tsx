@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom"; // ✅ FIXED: Add this import
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -9,7 +10,6 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import {
   Form,
   FormControl,
@@ -46,7 +46,7 @@ function SubmitButton() {
 }
 
 export function ContactForm() {
-  const [state, formAction] = useFormState(sendContactEmail, initialState);
+  const [state, formAction] = useActionState(sendContactEmail, initialState);
   const { toast } = useToast();
 
   const form = useForm<ContactFormData>({
@@ -70,7 +70,6 @@ export function ContactForm() {
       }
     }
   }, [state, toast, form]);
-
 
   return (
     <Form {...form}>

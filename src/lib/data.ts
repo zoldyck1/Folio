@@ -5,6 +5,8 @@ export interface Skill {
   name: string;
   icon: LucideIcon;
   category: 'Language' | 'Framework' | 'Tool' | 'Database' | 'Other';
+  percentage?: number;
+  color: string;
 }
 
 export interface Project {
@@ -19,17 +21,17 @@ export interface Project {
 }
 
 export const personalInfo = {
-  name: "Alex Johnson",
+  name: "Ayoub Loulaji",
   title: "Programmer & Computer Science Specialist",
   shortBio: "Passionate about building innovative solutions and exploring new technologies. Specializing in full-stack development and AI applications.",
-  longBio: "With a solid foundation in computer science and years of hands-on experience, I thrive on transforming complex problems into elegant, efficient, and user-friendly software. My journey in tech has been driven by a relentless curiosity and a desire to make a tangible impact. I'm always eager to learn, adapt, and collaborate on challenging projects.",
-  photoUrl: "https://picsum.photos/seed/devfolio-alex/400/400",
-  photoAiHint: "professional portrait",
-  email: "alex.johnson.dev@example.com",
+  longBio: "With a solid foundation in computer science, I thrive on transforming complex problems into elegant, efficient, and user-friendly software. My journey in tech has been driven by a relentless curiosity and a desire to make a tangible impact. I'm always eager to learn, adapt, and collaborate on challenging projects.",
+  photoUrl: "https://drive.google.com/uc?export=view&id=1BnJWewMYxq6awtXPV1SuO0NB9PW9fj0m",
+ photoAiHint: "professional portrait",
+  email: "ayoubl.zoldyck@gmail.com",
   linkedin: "https://www.linkedin.com/in/alexjohnsondev",
   github: "https://www.github.com/alexjohnsondev",
   resumeUrl: "/resume-alex-johnson.pdf", 
-  education: "M.S. in Computer Science, Stanford University (2020)\nB.S. in Software Engineering, MIT (2018)",
+  education: "Faculty of Sciences of Meknes / Moulay Ismail University",
   coreCompetencies: [
     "Full-Stack Web Development",
     "Machine Learning & AI",
@@ -48,28 +50,25 @@ export const personalInfo = {
 };
 
 export const skills: Skill[] = [
-  { name: "JavaScript", icon: Code, category: "Language" },
-  { name: "TypeScript", icon: Code, category: "Language" },
-  { name: "Python", icon: Code, category: "Language" },
-  { name: "Java", icon: Code, category: "Language" },
-  { name: "React", icon: Smartphone, category: "Framework" },
-  { name: "Next.js", icon: Smartphone, category: "Framework" },
-  { name: "Node.js", icon: Settings, category: "Framework" },
-  { name: "Express.js", icon: Settings, category: "Framework" },
-  { name: "Spring Boot", icon: Settings, category: "Framework" },
-  { name: "Django", icon: Settings, category: "Framework" },
-  { name: "SQL", icon: Database, category: "Database" },
-  { name: "MongoDB", icon: Database, category: "Database" },
-  { name: "PostgreSQL", icon: Database, category: "Database" },
-  { name: "Docker", icon: Briefcase, category: "Tool" },
-  { name: "Git", icon: Briefcase, category: "Tool" },
-  { name: "AWS", icon: Cloud, category: "Tool" },
-  { name: "TensorFlow", icon: Brain, category: "Tool" },
-  { name: "PyTorch", icon: Brain, category: "Tool" },
-  { name: "Figma", icon: Palette, category: "Tool" },
-  { name: "REST APIs", icon: Zap, category: "Other" },
-  { name: "GraphQL", icon: Zap, category: "Other" },
+  { name: "JavaScript", icon: Code, category: "Language", percentage: 70, color: '#FF6347' }, // Tomato
+  { name: "C++", icon: Code, category: "Language", percentage: 75, color: '#4682B4' }, // Steel Blue
+  { name: "C", icon: Code, category: "Language", percentage: 70, color: '#DC143C' }, // Crimson
+  { name: "python", icon: Code, category: "Language", percentage: 70, color: '#32CD32' }, // Lime Green
+  { name: "PHP", icon: Code, category: "Language", percentage: 50, color: '#9370DB' }, // Medium Purple
+  { name: "React", icon: Smartphone, category: "Framework", percentage: 75, color: '#61DAFB' }, // Cyan
+  { name: "Next.js", icon: Smartphone, category: "Framework", percentage: 70, color: '#000000' }, // Black
+  { name: "Node.js", icon: Settings, category: "Framework", percentage: 60, color: '#68A063' }, // Sage Green
+  { name: "Express.js", icon: Settings, category: "Framework", percentage: 55, color: '#40E0D0' }, // Turquoise
+  { name: "Django", icon: Settings, category: "Framework", percentage: 30, color: '#0C4B33' }, // Dark Green
+  { name: "SQL", icon: Database, category: "Database", percentage: 60, color: '#FFD700' }, // Gold
+  { name: "MongoDB", icon: Database, category: "Database", percentage: 30, color: '#47A248' }, // Forest Green
+  { name: "Docker", icon: Briefcase, category: "Tool", percentage: 30, color: '#2496ED' }, // Dodger Blue
+  { name: "Git", icon: Briefcase, category: "Tool", percentage: 70, color: '#F05032' }, // Red-Orange
+  { name: "TensorFlow", icon: Brain, category: "Tool", percentage: 30, color: '#FF6F00' }, // Orange
+  { name: "PyTorch", icon: Brain, category: "Tool", percentage: 30, color: '#EE4C2C' }, // Bright Red
 ];
+
+
 
 export const projects: Project[] = [
   {

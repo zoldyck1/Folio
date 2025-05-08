@@ -23,7 +23,7 @@ export type ContactFormState = {
 export async function sendContactEmail(
   prevState: ContactFormState,
   formData: FormData
-): Promise<ContactFormState> {
+): ContactFormState {
   const validatedFields = contactFormSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -56,7 +56,7 @@ export async function sendContactEmail(
 
   try {
     // In a real app, this would call an email service (e.g., SendGrid, Resend)
-    await sendEmail(emailToSend);
+ sendEmail(emailToSend);
     return {
       message: "Your message has been sent successfully! I'll get back to you soon.",
       success: true,

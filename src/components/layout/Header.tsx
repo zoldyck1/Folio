@@ -1,9 +1,9 @@
 "use client";
-
 import Link from "next/link";
 import { Menu, Code2 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -11,15 +11,16 @@ import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/skills", label: "Skills" },
-  { href: "/projects", label: "Projects" },
-  { href: "/resume", label: "Resume" },
-  { href: "/contact", label: "Contact" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#resume", label: "Resume" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Header() {
+  const { theme } = useTheme();
   const pathname = usePathname();
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -29,7 +30,7 @@ export function Header() {
   }, []);
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
-    <Link
+    <a
       href={href}
       className={cn(
         "text-sm font-medium transition-colors hover:text-primary",
@@ -38,15 +39,16 @@ export function Header() {
       onClick={() => setIsSheetOpen(false)}
     >
       {label}
-    </Link>
+    </a>
   );
 
   if (!isMounted) {
-    return ( // Skeleton or minimal loader for SSR/initial client render to avoid hydration issues with Sheet/ThemeToggle
+    return (
+      // Skeleton or minimal loader for SSR/initial client render to avoid hydration issues with Sheet/ThemeToggle
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Code2 className="h-6 w-6 text-primary" />
+            <Code2 className={cn("h-6 w-6", theme === 'dark' ? 'text-white' : 'text-black')} />
             <span className="font-bold text-lg">DevFolio</span>
           </Link>
           <div className="h-8 w-8 rounded-md bg-muted animate-pulse" /> {/* Placeholder for ThemeToggle */}
@@ -59,10 +61,10 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-4 flex items-center gap-2">
-          <Code2 className="h-6 w-6 text-primary" />
+          <Code2 className={cn("h-6 w-6", theme === 'dark' ? 'text-white' : 'text-black')} />
           <span className="font-bold text-lg">DevFolio</span>
         </Link>
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1">
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1 justify-center">
           {navItems.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}
@@ -83,15 +85,14 @@ export function Header() {
                 {navItems.map((item) => (
                   <NavLink key={item.href} href={item.href} label={item.label} />
                 ))}
-                 <div className="mt-4">
+                <div className="mt-4">
                   <ThemeToggle />
                 </div>
               </nav>
             </SheetContent>
           </Sheet>
-           <div className="block md:hidden">
-             {/* This empty div helps in positioning the sheet trigger button correctly when theme toggle is not visible on mobile nav initially */}
-           </div>
+          {/* This empty div helps in positioning the sheet trigger button correctly when theme toggle is not visible on mobile nav initially */}
+          <div className="block md:hidden" />
         </div>
       </div>
     </header>

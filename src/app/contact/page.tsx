@@ -24,7 +24,7 @@ export default function ContactPage() {
             </div> */}
             <div className="flex items-center gap-3">
               <MapPin className="h-5 w-5 text-primary" />
-              <span>Based in San Francisco Bay Area, CA (Remote Friendly)</span>
+              <span>Based in Ifran and Meknes, Fès-Meknès Region, Morocco (GMT+1)</span>
             </div>
           </div>
           <h3 className="text-2xl font-semibold mt-10 mb-6">Connect Online</h3>
