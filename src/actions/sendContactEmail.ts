@@ -23,7 +23,7 @@ export type ContactFormState = {
 export async function sendContactEmail(
   prevState: ContactFormState,
   formData: FormData
-): ContactFormState {
+): Promise<ContactFormState> {
   const validatedFields = contactFormSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
