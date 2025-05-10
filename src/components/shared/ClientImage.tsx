@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Image, { ImageProps, StaticImageData } from 'next/image';
+import type { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 export function ClientImage(props: ImageProps) {
   const [isMounted, setIsMounted] = useState(false);
-  const [imageSrc, setImageSrc] = useState<string | StaticImageData>(props.src);
+  const [imageSrc, setImageSrc] = useState<string | StaticImageData | StaticImport>(props.src);
 
   useEffect(() => {
     setIsMounted(true);
