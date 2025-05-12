@@ -22,9 +22,9 @@ export interface Project {
 
 export const personalInfo = {
   name: "Johan liebert",
-  title: "Programmer & Computer Science Specialist",
+  title: "Programmer & Computer Engineering Specialist",
   shortBio: "Passionate about building innovative solutions and exploring new technologies. Specializing in full-stack development and AI applications.",
-  longBio: "A motivated computer science graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Génie Informatique, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
+  longBio: "A motivated computer science graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Computer engineering, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
   photoUrl: "/images/me.png",
   photoAiHint: "professional portrait",
   email: "ayoubl.zoldyck@gmail.com",
@@ -49,7 +49,7 @@ export const personalInfo = {
     "Commitment to Quality",
     "Focus on Usability",
     "Honesty and Responsibility"
-  ]
+  ]                                
   
 };
 
@@ -110,13 +110,13 @@ export const projects: Project[] = [
 
 export const timeline = [
   { 
-    title: "GINF",
+    title: "Baccalaureate",
     date: "2021 - 2022",
     location: "Ifrane , Fès-Meknès Region, Morocco",
     description: "Baccalaureate"
   },
   { 
-    title: "GINF",
+    title: "Self development",
     date: "2021 - 2022",
     location: "Univers",
     description: "Worked on front-end development using React and assisted in API integration for web applications"
@@ -124,7 +124,7 @@ export const timeline = [
   { 
     title: "GINF",
     date: "2022 - now",
-    location: "GINF",
-    description: "During my studies in Génie Informatique, I developed practical skills in web development, C++, databases, and the software development...solving problems through code. I thrive in collaborative environments ."
+    location: "Meknes , Fès-Meknès Region, Morocco",
+    description: "Computer engineering Specialist."
   },
 ];
