@@ -50,7 +50,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
         {project.id === "project-3" && (
           <Button 
-            className="w-full mt-4 group/button" 
+            className="w-full mt-4 group/button text-foreground hover:text-foreground" 
             variant="outline"
             asChild
           >

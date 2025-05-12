@@ -34,7 +34,7 @@ export default function Home() {
                       View My Work <Eye className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button asChild variant="outline" size="lg" className="text-foreground hover:text-foreground">
                     <Link href="/#contact">
                       Get in Touch <Send className="ml-2 h-5 w-5" />
                     </Link>
