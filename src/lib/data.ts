@@ -25,7 +25,7 @@ export const personalInfo = {
   title: "Programmer & Computer Engineering Specialist",
   shortBio: "Passionate about building innovative solutions and exploring new technologies. Specializing in full-stack development and AI applications.",
   longBio: "A motivated computer science graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Computer engineering, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
-  photoUrl: "/images/me.png",
+  photoUrl: "/images/main.png",
   photoAiHint: "professional portrait",
   email: "ayoubl.zoldyck@gmail.com",
   linkedin: "https://www.linkedin.com/in/johan-liebert-4b0389239/",
