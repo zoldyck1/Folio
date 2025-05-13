@@ -122,9 +122,9 @@ export const timeline = [
     description: "Worked on front-end development using React and assisted in API integration for web applications"
   },
   { 
-    title: "GINF",
+    title: "Computer engineering Specialist",
     date: "2022 - now",
     location: "Meknes , Fès-Meknès Region, Morocco",
-    description: "Computer engineering Specialist."
+    description: ""
   },
 ];
