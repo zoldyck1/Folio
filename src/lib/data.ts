@@ -32,7 +32,7 @@ export const personalInfo = {
   github: "https://github.com/zoldyck1",
   instagram: "https://www.instagram.com/11___liebert/",
   resumeUrl: "/resume.pdf",
-  education: "Faculty of Sciences of Meknes / Moulay Ismail University",
+  education: "Computer Engineering Specialist / FSM",
 
 
   coreCompetencies: [
@@ -122,9 +122,9 @@ export const timeline = [
     description: "Worked on front-end development using React and assisted in API integration for web applications"
   },
   { 
-    title: "GINF",
+    title: "Computer engineering Specialist",
     date: "2022 - now",
     location: "Meknes , Fès-Meknès Region, Morocco",
-    description: "Computer engineering Specialist."
+    description: ""
   },
 ];

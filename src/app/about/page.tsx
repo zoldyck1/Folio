@@ -69,7 +69,7 @@ export default function AboutPage() {
       <div className="mt-16 animate-slide-up-fade [animation-delay:800ms]" suppressHydrationWarning>
         <h3 className="text-2xl font-semibold mb-6 flex items-center">
           <Briefcase className="mr-2 h-6 w-6 text-primary" />
-          Experience Timeline
+          Experience & Education Timeline
         </h3>
         <div className="relative pl-6 border-l-2 border-primary/50" suppressHydrationWarning>
           {timeline.map((item, index) => (
