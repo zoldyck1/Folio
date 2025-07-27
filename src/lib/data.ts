@@ -27,7 +27,7 @@ export const personalInfo = {
   longBio: "A motivated computer science graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Computer engineering, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
   photoUrl: "/images/main.png",
   photoAiHint: "professional portrait",
-  email: "ayoubl.zoldyck@gmail.com",
+  email: "rrzltktb@gmail.com",
   linkedin: "https://www.linkedin.com/in/johan-liebert-4b0389239/",
   github: "https://github.com/zoldyck1",
   instagram: "https://www.instagram.com/11___liebert/",
@@ -49,8 +49,8 @@ export const personalInfo = {
     "Commitment to Quality",
     "Focus on Usability",
     "Honesty and Responsibility"
-  ]                                
-  
+  ]
+
 };
 
 export const skills: Skill[] = [
@@ -75,27 +75,27 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "WordWave",
-    description: "WordWave is a modern digital library platform built with React, TypeScript, and Supabase. It provides users with a seamless experience to discover, download, and read books across multiple genres.",
-    imageUrl: "/images/word.jpg",
-    dataAiHint: "task manager app",
-    techStack: ["React", "TypeScript", "Firebase", "PostgreSQL"],
-
+    title: "Boutique -full options- E-commerce ",
+    description: "E-commerce moderne développé avec React, TypeScript et Vite, spécialisé dans la vente de produits anime et philosophiques (t-shirts, hoodies, accessoires). La plateforme intègre un système d'authentification Supabase, un panneau d'administration complet pour la gestion des produits et commandes, ainsi qu'un panier d'achat sophistiqué avec filtrage par catégories et prix... ",
+    imageUrl: "https://res.cloudinary.com/dalpnjdav/image/upload/v1753656826/axiom_project_piilwu.jpg",
+    dataAiHint: "E-commerce WebSite",
+    techStack: ["Next.js", "Node.js", "Flask", "React", "TypeScript", "PostgreSQL", "Firebase"],
   },
+
   {
     id: "project-2",
     title: "Future CS",
     description: "Computer science is the study of compulation and information. It is a board field that includes everythings from the theoretical foundations of computing to the practical applications of computers.",
     imageUrl: "/images/Futurecs.jpg",
     dataAiHint: "Learning WebSite",
-    techStack: ["React", "Node.js", "Firebase", "TypeScript", ],
+    techStack: ["React", "Node.js", "Firebase", "TypeScript",],
   },
   {
     id: "project-3",
     title: "InPhiLo",
     description: "At zoldyck1.github.io/inphilo, we're obsessed with philosophy and logic! We've curated a comprehensive collection of essential texts, from ancient Greek thinkers to modern-day logicians, all available for free download. ",
     imageUrl: "/images/inphilo.jpg",
-    dataAiHint: "E-commerce Website",
+    dataAiHint: "library Website",
     techStack: ["React", "Firebase", "TypeScript", "PostgreSQL"],
   },
   {
@@ -104,24 +104,41 @@ export const projects: Project[] = [
     description: "Computer Science is the foundation of modern technology, encompassing the study of computation , automation , and information. ",
     imageUrl: "/images/cs.jpg",
     dataAiHint: "learning Website",
-    techStack: ["Next.js", "Node.js", "Flask", "Python" ,"TypeScript"],
+    techStack: ["Next.js", "Node.js", "Flask", "Python", "TypeScript"],
+  },
+  {
+    id: "project-5",
+    title: "WordWave",
+    description: "WordWave is a modern digital library platform built with React, TypeScript, and Supabase. It provides users with a seamless experience to discover, download, and read books across multiple genres.",
+    imageUrl: "/images/word.jpg",
+    dataAiHint: "task manager app",
+    techStack: ["React", "TypeScript", "Firebase", "PostgreSQL"],
+
+  },
+  {
+    id: "project-6",
+    title: "YSM - Système de Gestion de Maintenance Hôtelière",
+    description: "Application web moderne de gestion de maintenance développée avec React, TypeScript et Supabase pour optimiser les opérations hôtelières. La plateforme offre des interfaces distinctes pour les clients (signalement de problèmes depuis leur chambre), les superviseurs (tableau de bord analytique et gestion des demandes) et les techniciens (suivi des interventions)...",
+    imageUrl: "https://res.cloudinary.com/dalpnjdav/image/upload/v1753656826/YOSMARTENANCE_proj_s2bbn6.jpg",
+    dataAiHint: "gestion de maintenance website",
+    techStack: ["Node.js", "Flask", "React", "TypeScript", "PostgreSQL", "Firebase"],
   },
 ];
 
 export const timeline = [
-  { 
+  {
     title: "Baccalaureate",
     date: "2021 - 2022",
     location: "Ifrane , Fès-Meknès Region, Morocco",
     description: "Baccalaureate"
   },
-  { 
+  {
     title: "Self development",
     date: "2021 - 2022",
     location: "Univers",
     description: "Worked on front-end development using React and assisted in API integration for web applications"
   },
-  { 
+  {
     title: "Computer engineering Specialist",
     date: "2022 - now",
     location: "Meknes , Fès-Meknès Region, Morocco",

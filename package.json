@@ -44,6 +44,7 @@
     "firebase": "^11.3.0",
     "genkit": "^1.6.2",
     "lucide-react": "^0.475.0",
+    "nex": "^2.0.22",
     "next": "^15.3.2",
     "next-themes": "^0.3.0",
     "patch-package": "^8.0.0",

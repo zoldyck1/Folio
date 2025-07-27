@@ -13,8 +13,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <Card className={`group overflow-hidden h-full flex flex-col animate-slide-up-fade hover:shadow-xl transition-all duration-300 hover:-translate-y-1`} 
-      style={{ animationDelay: `${index * 100}ms` }} 
+    <Card className={`group overflow-hidden h-full flex flex-col animate-slide-up-fade hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+      style={{ animationDelay: `${index * 100}ms` }}
       suppressHydrationWarning
     >
       <div className="relative w-full h-48 sm:h-56 overflow-hidden" suppressHydrationWarning>
@@ -49,18 +49,52 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
         {project.id === "project-3" && (
-          <Button 
-            className="w-full mt-4 group/button text-foreground hover:text-foreground" 
+          <Button
+            className="w-full mt-4 group/button text-foreground hover:text-foreground"
             variant="outline"
             asChild
           >
-            <Link 
-              href="https://zoldyck1.github.io/inphilo/" 
-              target="_blank" 
+            <Link
+              href="https://zoldyck1.github.io/inphilo/"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"
             >
-              Visit Website 
+              Visit Website
+              <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/button:translate-x-1" />
+            </Link>
+          </Button>
+        )}
+        {project.id === "project-1" && (
+          <Button
+            className="w-full mt-4 group/button text-foreground hover:text-foreground"
+            variant="outline"
+            asChild
+          >
+            <Link
+              href="https://axiom-shop.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center"
+            >
+              Visit Axiom Shop
+              <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/button:translate-x-1" />
+            </Link>
+          </Button>
+        )}
+        {project.id === "project-6" && (
+          <Button
+            className="w-full mt-4 group/button text-foreground hover:text-foreground"
+            variant="outline"
+            asChild
+          >
+            <Link
+              href="https://yusmartenance.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center"
+            >
+              Visit YSM Platform
               <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/button:translate-x-1" />
             </Link>
           </Button>
