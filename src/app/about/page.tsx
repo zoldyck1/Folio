@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <SectionWrapper id="about" title="About Me" subtitle="My journey in technology and beyond.">
       <div className="grid md:grid-cols-5 gap-12 items-start" suppressHydrationWarning>
-        <div className="md:col-span-2 animate-slide-up-fade [animation-delay:200ms]" suppressHydrationWarning>
+        <div className="hidden md:block md:col-span-2 animate-slide-up-fade [animation-delay:200ms]" suppressHydrationWarning>
           {personalInfo.photoUrl && (
             <ClientImage
               src={personalInfo.photoUrl}
@@ -19,7 +19,7 @@ export default function AboutPage() {
             />
           )}
         </div>
-        <div className="md:col-span-3 space-y-6 animate-slide-up-fade" suppressHydrationWarning>
+        <div className="col-span-full md:col-span-3 space-y-6 animate-slide-up-fade" suppressHydrationWarning>
           <p className="text-lg text-muted-foreground leading-relaxed">
             {personalInfo.longBio}
           </p>
