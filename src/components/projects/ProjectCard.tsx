@@ -89,7 +89,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             asChild
           >
             <Link
-              href="https://yusmartenance.vercel.app/"
+              href="https://yosmartenance.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"
