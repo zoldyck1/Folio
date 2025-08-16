@@ -21,17 +21,17 @@ export interface Project {
 }
 
 export const personalInfo = {
-  name: "Johan liebert",
-  title: "Programmer & Computer Engineering Specialist",
+  name: "Ayoub Loulaji",
+  title: "Programmer & Computer Engineering Specialist ",
   shortBio: "Passionate about building innovative solutions and exploring new technologies. Specializing in full-stack development and AI applications.",
   longBio: "A motivated computer science graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Computer engineering, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
-  photoUrl: "/images/main.png",
+  photoUrl: "/images/main.jpg",
   photoAiHint: "professional portrait",
-  email: "rrzltktb@gmail.com",
-  linkedin: "https://www.linkedin.com/in/johan-liebert-4b0389239/",
+  email: "a.loulaji@edu.umi.ac.ma",
+  linkedin: "https://www.linkedin.com/in/ayoub-l-4b0389239/",
   github: "https://github.com/zoldyck1",
   instagram: "https://www.instagram.com/11___liebert/",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/resume2.pdf",
   education: "Computer Engineering Specialist / FSM",
 
 
