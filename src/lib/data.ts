@@ -62,14 +62,20 @@ export const skills: Skill[] = [
   { name: "React", icon: Smartphone, category: "Framework", percentage: 75, color: '#61DAFB' }, // Cyan
   { name: "Next.js", icon: Smartphone, category: "Framework", percentage: 70, color: '#000000' }, // Black
   { name: "Node.js", icon: Settings, category: "Framework", percentage: 60, color: '#68A063' }, // Sage Green
+  { name: "Vue.js", icon: Settings, category: "Framework", percentage: 70, color: '#1d20bfff' }, // Turquoise
   { name: "Express.js", icon: Settings, category: "Framework", percentage: 55, color: '#40E0D0' }, // Turquoise
   { name: "Django", icon: Settings, category: "Framework", percentage: 30, color: '#0C4B33' }, // Dark Green
+
   { name: "SQL", icon: Database, category: "Database", percentage: 60, color: '#FFD700' }, // Gold
-  { name: "MongoDB", icon: Database, category: "Database", percentage: 30, color: '#47A248' }, // Forest Green
+  { name: "Firebase", icon: Database, category: "Database", percentage: 60, color: '#c47705ff' }, // Gold
+  { name: "supabase", icon: Database, category: "Database", percentage: 88, color: '#095005ff' }, // Gold
+  { name: "MongoDB", icon: Database, category: "Database", percentage: 30, color: '#7af97cff' }, // Forest Green
+
   { name: "Docker", icon: Briefcase, category: "Tool", percentage: 30, color: '#2496ED' }, // Dodger Blue
   { name: "Git", icon: Briefcase, category: "Tool", percentage: 70, color: '#F05032' }, // Red-Orange
-  { name: "TensorFlow", icon: Brain, category: "Tool", percentage: 30, color: '#FF6F00' }, // Orange
+  { name: "VScode", icon: Brain, category: "Tool", percentage: 90, color: '#009ed3ff' }, // Orange
   { name: "PyTorch", icon: Brain, category: "Tool", percentage: 30, color: '#EE4C2C' }, // Bright Red
+  { name: "Vercel", icon: Brain, category: "Tool", percentage: 90, color: '#827c7aff' }, // Bright Red
 ];
 
 export const projects: Project[] = [
