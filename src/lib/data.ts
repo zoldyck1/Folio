@@ -27,7 +27,7 @@ export const personalInfo = {
   longBio: "A motivated Software Engineer graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Computer engineering, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
   photoUrl: "/images/pro-main.png",
   photoAiHint: "professional portrait",
-  email: "a.loulaji@edu.umi.ac.ma",
+  email: "ayoubl.zoldyck@gmail.com",
   linkedin: "https://www.linkedin.com/in/ayoub-l-4b0389239/",
   github: "https://github.com/zoldyck1",
   instagram: "https://www.instagram.com/11___liebert/",
