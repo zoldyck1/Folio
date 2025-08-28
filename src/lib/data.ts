@@ -4,7 +4,7 @@ import { Code, Smartphone, Database, Cloud, Briefcase, Brain, Settings, Palette,
 export interface Skill {
   name: string;
   icon: LucideIcon;
-  category: 'Language' | 'Framework' | 'Tool' | 'Database' | 'Other';
+  category: 'Language' | 'Framework/library' | 'Tool' | 'Database' | 'Other';
   percentage?: number;
   color: string;
 }
@@ -22,9 +22,9 @@ export interface Project {
 
 export const personalInfo = {
   name: "Ayoub Loulaji",
-  title: "Programmer & Computer Engineering Specialist ",
+  title: "Software Engineer & Programmer ",
   shortBio: "Passionate about building innovative solutions and exploring new technologies. Specializing in full-stack development and AI applications.",
-  longBio: "A motivated computer science graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Computer engineering, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
+  longBio: "A motivated Software Engineer graduate with a strong academic foundation in software development, algorithms, and systems design. During my studies in Computer engineering, I developed practical skills in web development, C++, databases, and the software development lifecycle. I'm curious by nature, eager to learn new technologies, and enjoy solving real-world problems through code. I thrive in collaborative environments and am always ready to take on new challenges to grow as a developer.",
   photoUrl: "/images/main.jpg",
   photoAiHint: "professional portrait",
   email: "a.loulaji@edu.umi.ac.ma",
@@ -32,7 +32,7 @@ export const personalInfo = {
   github: "https://github.com/zoldyck1",
   instagram: "https://www.instagram.com/11___liebert/",
   resumeUrl: "/resume2.pdf",
-  education: "Computer Engineering Specialist / FSM",
+  education: "Software Engineer Specialist / FSM",
 
 
   coreCompetencies: [
@@ -59,16 +59,16 @@ export const skills: Skill[] = [
   { name: "C", icon: Code, category: "Language", percentage: 70, color: '#DC143C' }, // Crimson
   { name: "python", icon: Code, category: "Language", percentage: 70, color: '#32CD32' }, // Lime Green
   { name: "PHP", icon: Code, category: "Language", percentage: 50, color: '#9370DB' }, // Medium Purple
-  { name: "React", icon: Smartphone, category: "Framework", percentage: 75, color: '#61DAFB' }, // Cyan
-  { name: "Next.js", icon: Smartphone, category: "Framework", percentage: 70, color: '#000000' }, // Black
-  { name: "Node.js", icon: Settings, category: "Framework", percentage: 60, color: '#68A063' }, // Sage Green
-  { name: "Vue.js", icon: Settings, category: "Framework", percentage: 70, color: '#1d20bfff' }, // Turquoise
-  { name: "Express.js", icon: Settings, category: "Framework", percentage: 55, color: '#40E0D0' }, // Turquoise
-  { name: "Django", icon: Settings, category: "Framework", percentage: 30, color: '#0C4B33' }, // Dark Green
+  { name: "React", icon: Smartphone, category: "Framework/library", percentage: 75, color: '#61DAFB' }, // Cyan
+  { name: "Next.js", icon: Smartphone, category: "Framework/library", percentage: 70, color: '#000000' }, // Black
+  { name: "Node.js", icon: Settings, category: "Framework/library", percentage: 60, color: '#68A063' }, // Sage Green
+  { name: "Vue.js", icon: Settings, category: "Framework/library", percentage: 70, color: '#1d20bfff' }, // Turquoise
+  { name: "Express.js", icon: Settings, category: "Framework/library", percentage: 55, color: '#40E0D0' }, // Turquoise
+  { name: "Django", icon: Settings, category: "Framework/library", percentage: 40, color: '#0C4B33' }, // Dark Green
 
-  { name: "SQL", icon: Database, category: "Database", percentage: 60, color: '#FFD700' }, // Gold
-  { name: "Firebase", icon: Database, category: "Database", percentage: 60, color: '#c47705ff' }, // Gold
-  { name: "supabase", icon: Database, category: "Database", percentage: 88, color: '#095005ff' }, // Gold
+  { name: "SQLbasics", icon: Database, category: "Database", percentage: 65, color: '#FFD700' }, // Gold
+  { name: "SQLite", icon: Database, category: "Database", percentage: 60, color: '#c47705ff' }, // Gold
+  { name: "PostgreSQL", icon: Database, category: "Database", percentage: 88, color: '#095005ff' }, // Gold
   { name: "MongoDB", icon: Database, category: "Database", percentage: 30, color: '#7af97cff' }, // Forest Green
 
   { name: "Docker", icon: Briefcase, category: "Tool", percentage: 30, color: '#2496ED' }, // Dodger Blue
@@ -76,6 +76,8 @@ export const skills: Skill[] = [
   { name: "VScode", icon: Brain, category: "Tool", percentage: 90, color: '#009ed3ff' }, // Orange
   { name: "PyTorch", icon: Brain, category: "Tool", percentage: 30, color: '#EE4C2C' }, // Bright Red
   { name: "Vercel", icon: Brain, category: "Tool", percentage: 90, color: '#827c7aff' }, // Bright Red
+  { name: "Jupyter Notebook", icon: Brain, category: "Tool", percentage: 60, color: '#a57363ff' }, // Bright Red
+
 ];
 
 export const projects: Project[] = [
@@ -134,19 +136,25 @@ export const projects: Project[] = [
 export const timeline = [
   {
     title: "Baccalaureate",
+    date: "2020 - 2021",
+    location: "Ifrane , Fès-Meknès Region, Morocco",
+    description: "Baccalaureate 1"
+  },
+  {
+    title: "Baccalaureate",
     date: "2021 - 2022",
     location: "Ifrane , Fès-Meknès Region, Morocco",
-    description: "Baccalaureate"
+    description: "Baccalaureate 2"
   },
   {
     title: "Self development",
-    date: "2021 - 2022",
+    date: "2021 - present",
     location: "Univers",
-    description: "Worked on front-end development using React and assisted in API integration for web applications"
+    description: "I work as a front-end developer using React and related tools, and occasionally handle full-stack tasks by integrating APIs and managing simple back-end functionality."
   },
   {
-    title: "Computer engineering Specialist",
-    date: "2022 - now",
+    title: "Software engineering Specialist",
+    date: "2022 - present",
     location: "Meknes , Fès-Meknès Region, Morocco",
     description: ""
   },

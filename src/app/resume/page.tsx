@@ -10,7 +10,7 @@ export default function ResumePage() {
       <div className="text-center mb-8 animate-slide-up-fade">
         <Button asChild size="lg">
           <Link href={personalInfo.resumeUrl} download target="_blank">
-            Download Resume <Download className="ml-2 h-5 w-5" />
+            Download Resume / CV <Download className="ml-2 h-5 w-5" />
           </Link>
         </Button>
       </div>

@@ -49,7 +49,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="text-center" suppressHydrationWarning>
           <p className="text-sm text-muted-foreground">
-            &copy; The philosopher AL. All rights reserved.
+            &copy; The philosopher AL. All rights reserved. 2021-2025
           </p>
         </div>
       </div>
