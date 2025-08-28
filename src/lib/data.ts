@@ -37,8 +37,8 @@ export const personalInfo = {
 
   coreCompetencies: [
     "Full Stack Developer with extensive experience in building scalable web applications from front to back. Proficient in modern technologies including React, Next.js, Node.js, Express, and MongoDB. Skilled in crafting responsive UIs, optimizing backend performance, and integrating secure APIs.",
-    "Introductory Machine Learning (supervised learning, Python libraries)",
-    "C++ Programming (OOP, data structures, algorithm implementation)",
+    "Machine Learning (supervised learning, Python libraries)",
+    "C++: Proficient in object-oriented programming (OOP), data structures, and algorithms, with a focus on writing clean, efficient, and memory-safe code.",
     "Software Development Life Cycle & Agile Basics",
     "Relational Databases (SQL, normalization, ERDs)",
     "Problem Solving & Algorithm Fundamentals"
