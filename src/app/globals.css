@@ -92,6 +92,27 @@ body {
   }
 }
 
+/* Continuous moving animation */
+.animate-continuous-slide {
+  animation: continuous-slide 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes continuous-slide {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    transform: translateX(10px) scale(1.05);
+  }
+  50% {
+    transform: translateX(-5px) scale(0.95);
+  }
+  75% {
+    transform: translateX(8px) scale(1.02);
+  }
+}
+
 .content-section {
   @apply py-16 md:py-24 px-4 md:px-8;
 }

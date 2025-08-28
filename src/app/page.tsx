@@ -20,7 +20,12 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center" suppressHydrationWarning>
               <div className="animate-slide-up-fade space-y-6" suppressHydrationWarning>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-                  Hi, I&apos;m <span className="text-primary">{personalInfo.name}</span>
+                  Hi, I&apos;m{' '}
+                  <span className="relative inline-block overflow-hidden">
+                    <span className="text-primary animate-continuous-slide">
+                      {personalInfo.name}
+                    </span>
+                  </span>
                 </h1>
                 <p className="text-xl text-muted-foreground">
                   {personalInfo.title}
