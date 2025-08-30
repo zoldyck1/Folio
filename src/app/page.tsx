@@ -9,6 +9,7 @@ import ProjectsPage from './projects/page';
 import ResumePage from './resume/page';
 import ContactPage from './contact/page';
 import { ClientImage } from '@/components/shared/ClientImage';
+import { TypewriterText } from '@/components/shared/TypewriterText';
 
 
 export default function Home() {
@@ -21,11 +22,7 @@ export default function Home() {
               <div className="animate-slide-up-fade space-y-6" suppressHydrationWarning>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
                   Hi, I&apos;m{' '}
-                  <span className="relative inline-block overflow-hidden">
-                    <span className="text-primary animate-continuous-slide">
-                      {personalInfo.name}
-                    </span>
-                  </span>
+                  <TypewriterText text={personalInfo.name} speed={100} />
                 </h1>
                 <p className="text-xl text-muted-foreground">
                   {personalInfo.title}

@@ -36,7 +36,15 @@ export default function SkillsPage() {
                     className="text-center hover:shadow-lg transition-shadow duration-300"
                   >
                     <CardHeader className="pb-2">
-                      <skill.icon className="h-10 w-10 mx-auto text-primary mb-2" />
+                      {skill.iconUrl ? (
+                        <img 
+                          src={skill.iconUrl} 
+                          alt={skill.name} 
+                          className="h-10 w-10 mx-auto mb-2 object-contain" 
+                        />
+                      ) : (
+                        skill.icon && <skill.icon className="h-10 w-10 mx-auto text-primary mb-2" />
+                      )}
                       <CardTitle className="text-base font-medium">{skill.name}</CardTitle>
                     </CardHeader>
                     <CardContent className="pt-0">

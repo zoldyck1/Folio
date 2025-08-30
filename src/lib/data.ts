@@ -3,7 +3,8 @@ import { Code, Smartphone, Database, Cloud, Briefcase, Brain, Settings, Palette,
 
 export interface Skill {
   name: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
+  iconUrl?: string;
   category: 'Language' | 'Framework/library' | 'Tool' | 'Database' | 'Other';
   percentage?: number;
   color: string;
@@ -54,29 +55,29 @@ export const personalInfo = {
 };
 
 export const skills: Skill[] = [
-  { name: "JavaScript", icon: Code, category: "Language", percentage: 70, color: '#FF6347' }, // Tomato
-  { name: "C++", icon: Code, category: "Language", percentage: 75, color: '#4682B4' }, // Steel Blue
-  { name: "C", icon: Code, category: "Language", percentage: 70, color: '#DC143C' }, // Crimson
-  { name: "python", icon: Code, category: "Language", percentage: 70, color: '#32CD32' }, // Lime Green
-  { name: "PHP", icon: Code, category: "Language", percentage: 50, color: '#9370DB' }, // Medium Purple
-  { name: "React", icon: Smartphone, category: "Framework/library", percentage: 75, color: '#61DAFB' }, // Cyan
-  { name: "Next.js", icon: Smartphone, category: "Framework/library", percentage: 70, color: '#000000' }, // Black
-  { name: "Node.js", icon: Settings, category: "Framework/library", percentage: 60, color: '#68A063' }, // Sage Green
-  { name: "Vue.js", icon: Settings, category: "Framework/library", percentage: 70, color: '#1d20bfff' }, // Turquoise
-  { name: "Express.js", icon: Settings, category: "Framework/library", percentage: 55, color: '#40E0D0' }, // Turquoise
-  { name: "Django", icon: Settings, category: "Framework/library", percentage: 40, color: '#0C4B33' }, // Dark Green
+  { name: "JavaScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", category: "Language", percentage: 70, color: '#FF6347' }, // Tomato
+  { name: "C++", iconUrl: "https://img.icons8.com/?size=100&id=40669&format=png&color=000000", category: "Language", percentage: 75, color: '#4682B4' }, // Steel Blue
+  { name: "C", iconUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/570px-C_Programming_Language.svg.png?20201031132917", category: "Language", percentage: 70, color: '#DC143C' }, // Crimson
+  { name: "python", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", category: "Language", percentage: 70, color: '#32CD32' }, // Lime Green
+  { name: "PHP", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg", category: "Language", percentage: 50, color: '#9370DB' }, // Medium Purple
+  { name: "React", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", category: "Framework/library", percentage: 75, color: '#61DAFB' }, // Cyan
+  { name: "Next.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", category: "Framework/library", percentage: 70, color: '#000000' }, // Black
+  { name: "Node.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", category: "Framework/library", percentage: 60, color: '#68A063' }, // Sage Green
+  { name: "Vue.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", category: "Framework/library", percentage: 70, color: '#1d20bfff' }, // Turquoise
+  { name: "Express.js", iconUrl: "https://logowik.com/content/uploads/images/express-js1720895488.logowik.com.webp", category: "Framework/library", percentage: 55, color: '#40E0D0' }, // Turquoise
+  { name: "Django", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg", category: "Framework/library", percentage: 40, color: '#0C4B33' }, // Dark Green
 
-  { name: "SQLbasics", icon: Database, category: "Database", percentage: 65, color: '#FFD700' }, // Gold
-  { name: "SQLite", icon: Database, category: "Database", percentage: 60, color: '#c47705ff' }, // Gold
-  { name: "PostgreSQL", icon: Database, category: "Database", percentage: 88, color: '#095005ff' }, // Gold
-  { name: "MongoDB", icon: Database, category: "Database", percentage: 30, color: '#7af97cff' }, // Forest Green
+  { name: "MySql", iconUrl: "https://e7.pngegg.com/pngimages/747/798/png-clipart-mysql-logo-mysql-database-web-development-computer-software-dolphin-marine-mammal-animals-thumbnail.png", category: "Database", percentage: 65, color: '#FFD700' }, // Gold
+  { name: "SQLite", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg", category: "Database", percentage: 60, color: '#c47705ff' }, // Gold
+  { name: "PostgreSQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", category: "Database", percentage: 88, color: '#095005ff' }, // Gold
+  { name: "MongoDB", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", category: "Database", percentage: 30, color: '#7af97cff' }, // Forest Green
 
-  { name: "Docker", icon: Briefcase, category: "Tool", percentage: 30, color: '#2496ED' }, // Dodger Blue
-  { name: "Git", icon: Briefcase, category: "Tool", percentage: 70, color: '#F05032' }, // Red-Orange
-  { name: "VScode", icon: Brain, category: "Tool", percentage: 90, color: '#009ed3ff' }, // Orange
-  { name: "PyTorch", icon: Brain, category: "Tool", percentage: 30, color: '#EE4C2C' }, // Bright Red
-  { name: "Vercel", icon: Brain, category: "Tool", percentage: 90, color: '#827c7aff' }, // Bright Red
-  { name: "Jupyter Notebook", icon: Brain, category: "Tool", percentage: 60, color: '#a57363ff' }, // Bright Red
+  { name: "Docker", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", category: "Tool", percentage: 30, color: '#2496ED' }, // Dodger Blue
+  { name: "Git", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", category: "Tool", percentage: 70, color: '#F05032' }, // Red-Orange
+  { name: "VScode", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", category: "Tool", percentage: 90, color: '#009ed3ff' }, // Orange
+  { name: "PyTorch", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg", category: "Tool", percentage: 30, color: '#EE4C2C' }, // Bright Red
+  { name: "Vercel", iconUrl: "https://imgix.cosmicjs.com/5d640ce0-e797-11ee-b074-b5c8fe3ef189-Vercel.png?w=1200&auto=compress", category: "Tool", percentage: 90, color: '#827c7aff' }, // Bright Red
+  { name: "Jupyter Notebook", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", category: "Tool", percentage: 60, color: '#a57363ff' }, // Bright Red
 
 ];
 
