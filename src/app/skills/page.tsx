@@ -14,8 +14,13 @@ export default function SkillsPage() {
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.2 }
+      ([entry]) => {
+        setVisible(entry.isIntersecting);
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '50px 0px -50px 0px'
+      }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -62,23 +67,33 @@ export default function SkillsPage() {
 
 const SkillBar = ({ skill, animate }: { skill: Skill, animate: boolean }) => {
   const [width, setWidth] = useState(0);
-  const color = skill.color || '#ccc'; // Fallback color
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const color = skill.color || '#ccc';
 
   useEffect(() => {
-    if (animate) {
-      setWidth(skill.percentage || 0);
-    } else {
+    if (animate && !hasAnimated) {
+      const timer = setTimeout(() => {
+        setWidth(skill.percentage || 0);
+        setHasAnimated(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    } else if (!animate) {
       setWidth(0);
+      setHasAnimated(false);
     }
-  }, [skill.percentage, animate]);
+  }, [skill.percentage, animate, hasAnimated]);
 
   return (
     <div className="space-y-2" suppressHydrationWarning>
       <p className="text-sm text-muted-foreground text-right">{skill.percentage}%</p>
       <div className="h-2 w-full bg-muted rounded-full overflow-hidden" suppressHydrationWarning>
         <div
-          className="h-full rounded-full transition-all duration-1000 ease-out"
-          style={{ width: `${width}%`, backgroundColor: color }}
+          className="h-full rounded-full transition-all duration-1500 ease-out"
+          style={{ 
+            width: `${width}%`, 
+            backgroundColor: color,
+            transform: 'translateZ(0)'
+          }}
           suppressHydrationWarning
         ></div>
       </div>
