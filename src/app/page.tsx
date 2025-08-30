@@ -45,15 +45,23 @@ export default function Home() {
               </div>
               <div className="animate-slide-up-fade [animation-delay:200ms] flex justify-center md:justify-end" suppressHydrationWarning>
                 {personalInfo.photoUrl && (
-                  <ClientImage
-                    src={personalInfo.photoUrl}
-                    alt={personalInfo.name}
-                    width={400}
-                    height={400}
-                    priority={true}
-                    className="rounded-full shadow-lg object-cover aspect-square border-4 border-primary/20 mt-20"
-                    data-ai-hint={personalInfo.photoAiHint}
-                  />
+                  <div className="relative group cursor-pointer w-[280px] h-[280px] mt-20 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2">
+                    <div className="absolute inset-0 rounded-full border-2 border-primary group-hover:border-primary/80 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-500"></div>
+                    <div className="absolute top-2 right-8 text-primary text-lg group-hover:rotate-180 group-hover:scale-125 transition-all duration-500">✦</div>
+                    <div className="absolute bottom-8 left-2 text-primary/60 text-sm transform -rotate-45 group-hover:translate-x-1 group-hover:text-primary transition-all duration-500">////</div>
+                    <div className="absolute top-8 left-2 text-primary/40 text-lg group-hover:rotate-90 group-hover:text-primary transition-all duration-500">+</div>
+                    <div className="absolute inset-4 rounded-full overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 transition-all duration-500">
+                      <ClientImage
+                        src={personalInfo.photoUrl}
+                        alt={personalInfo.name}
+                        width={250}
+                        height={250}
+                        priority={true}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 shadow-2xl"
+                        data-ai-hint={personalInfo.photoAiHint}
+                      />
+                    </div>
+                  </div>
                 )}
               </div>
             </div>

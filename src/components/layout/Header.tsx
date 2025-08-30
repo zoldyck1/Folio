@@ -33,19 +33,24 @@ export function Header() {
     <a
       href={href}
       className={cn(
-        "text-sm font-medium transition-colors hover:text-primary",
-        pathname === href ? "text-primary" : "text-muted-foreground",
+        "relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full",
+        "hover:bg-primary/10 hover:text-primary hover:scale-105",
+        "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-primary/20 before:to-transparent",
+        "before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100",
+        pathname === href 
+          ? "text-primary bg-primary/10 shadow-lg shadow-primary/20" 
+          : "text-muted-foreground",
       )}
       onClick={() => setIsSheetOpen(false)}
     >
-      {label}
+      <span className="relative z-10">{label}</span>
     </a>
   );
 
   if (!isMounted) {
     return (
       // Skeleton or minimal loader for SSR/initial client render to avoid hydration issues with Sheet/ThemeToggle
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
+      <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 shadow-sm" suppressHydrationWarning>
         <div className="container flex h-16 items-center justify-between" suppressHydrationWarning>
           <Link href="/" className="flex items-center gap-2">
             <Code2 className={cn("h-6 w-6", theme === 'dark' ? 'text-white' : 'text-black')} />
@@ -58,13 +63,13 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 shadow-sm" suppressHydrationWarning>
       <div className="container flex h-16 items-center" suppressHydrationWarning>
         <Link href="/" className="mr-4 flex items-center gap-2">
           <Code2 className={cn("h-6 w-6", theme === 'dark' ? 'text-white' : 'text-black')} />
           <span className="font-bold text-lg">DevFolio</span>
         </Link>
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1 justify-center" suppressHydrationWarning>
+        <nav className="hidden md:flex items-center space-x-2 text-sm font-medium flex-1 justify-center" suppressHydrationWarning>
           {navItems.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}
