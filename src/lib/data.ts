@@ -94,17 +94,17 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "Boutique -full options- E-commerce ",
-    description: "E-commerce moderne développé avec React, TypeScript et Vite, spécialisé dans la vente de produits anime et philosophiques (t-shirts, hoodies, accessoires). La plateforme intègre un système d'authentification Supabase, un panneau d'administration complet pour la gestion des produits et commandes, ainsi qu'un panier d'achat sophistiqué avec filtrage par catégories et prix... ",
-    imageUrl: "https://res.cloudinary.com/dalpnjdav/image/upload/v1753656826/axiom_project_piilwu.jpg",
+    title: "E-commerce platform with full options",
+    description: "Modern e-commerce platform developed with React, TypeScript, and Vite, specialized in selling anime and philosophy-related products (t-shirts, hoodies, accessories). The platform integrates a Supabase authentication system, a complete admin panel for managing products and orders, as well as an advanced shopping cart with filtering by category and price",
+    imageUrl: "/images/Axiom shop project.png",
     dataAiHint: "E-commerce WebSite",
-    techStack: ["Next.js", "Node.js", "Flask", "React", "TypeScript", "PostgreSQL", "Firebase"],
+    techStack: ["Next.js", "Node.js", "React", "TypeScript", "PostgreSQL", "Firebase"],
   },
 
   {
     id: "project-2",
     title: "Future CS",
-    description: "Computer science is the study of compulation and information. It is a board field that includes everythings from the theoretical foundations of computing to the practical applications of computers.",
+    description: "Computer science app is the study of compulation and information. It is a board field that includes everythings from the theoretical foundations of computing to the practical applications of computers.",
     imageUrl: "/images/Futurecs.jpg",
     dataAiHint: "Learning WebSite",
     techStack: ["React", "Node.js", "Firebase", "TypeScript",],
@@ -112,15 +112,15 @@ export const projects: Project[] = [
   {
     id: "project-3",
     title: "InPhiLo",
-    description: "At zoldyck1.github.io/inphilo, we're obsessed with philosophy and logic! We've curated a comprehensive collection of essential texts, from ancient Greek thinkers to modern-day logicians, all available for free download. ",
-    imageUrl: "/images/inphilo.jpg",
+    description: "At inphilo, we're obsessed with philosophy and logic! We've curated a comprehensive collection of essential texts, from ancient Greek thinkers to modern-day logicians, all available for free download. ",
+    imageUrl: "/images/Inphilo Project.png",
     dataAiHint: "library Website",
     techStack: ["React", "Firebase", "TypeScript", "PostgreSQL"],
   },
   {
     id: "project-4",
     title: "Computer science for beginner",
-    description: "Computer Science is the foundation of modern technology, encompassing the study of computation , automation , and information. ",
+    description: "in Computer Science you can learn the foundation of modern technology, encompassing the study of computation , automation , and information. ",
     imageUrl: "/images/cs.jpg",
     dataAiHint: "learning Website",
     techStack: ["Next.js", "Node.js", "Flask", "Python", "TypeScript"],
@@ -136,10 +136,10 @@ export const projects: Project[] = [
   },
   {
     id: "project-6",
-    title: "YSM - Système de Gestion de Maintenance Hôtelière",
-    description: "Application web moderne de gestion de maintenance développée avec React, TypeScript et Supabase pour optimiser les opérations hôtelières. La plateforme offre des interfaces distinctes pour les clients (signalement de problèmes depuis leur chambre), les superviseurs (tableau de bord analytique et gestion des demandes) et les techniciens (suivi des interventions)...",
-    imageUrl: "https://res.cloudinary.com/dalpnjdav/image/upload/v1753656826/YOSMARTENANCE_proj_s2bbn6.jpg",
-    dataAiHint: "gestion de maintenance website",
+    title: "YSM - Maintenance Management System",
+    description: "Modern web application for maintenance management developed with React, TypeScript, and Supabase to optimize hotel operations. The platform offers distinct interfaces for customers (reporting issues from their room), supervisors (analytical dashboard and request management), and technicians (tracking interventions).",
+    imageUrl: "/images/Yosmartenance project.png",
+    dataAiHint: "Maintenance Management System",
     techStack: ["Node.js", "Flask", "React", "TypeScript", "PostgreSQL", "Firebase"],
   },
 ];
