@@ -1,8 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 
-export default function NoSSR({ children }: { children: React.ReactNode }) {
+interface NoSSRProps {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
+}
+
+const NoSSR = memo(function NoSSR({ children, fallback = null }: NoSSRProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -10,8 +15,10 @@ export default function NoSSR({ children }: { children: React.ReactNode }) {
   }, []);
 
   if (!isMounted) {
-    return null;
+    return <>{fallback}</>;
   }
 
   return <>{children}</>;
-} 
+});
+
+export default NoSSR; 

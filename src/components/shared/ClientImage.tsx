@@ -1,28 +1,24 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import Image, { ImageProps, StaticImageData } from 'next/image';
 import type { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
-export function ClientImage(props: ImageProps) {
+interface OptimizedImageProps extends Omit<ImageProps, 'src'> {
+  src: string | StaticImageData | StaticImport;
+  fallback?: string;
+}
+
+export const ClientImage = memo(function ClientImage({
+  fallback = '/images/placeholder.svg',
+  ...props
+}: OptimizedImageProps) {
   const [isMounted, setIsMounted] = useState(false);
-  const [imageSrc, setImageSrc] = useState<string | StaticImageData | StaticImport>(props.src);
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-    setImageSrc(props.src);
-    setImageError(false);
-  }, [props.src]);
-
-  // Helper function to determine if image should be unoptimized
-  const shouldUnoptimize = (src: string | StaticImageData | StaticImport): boolean => {
-    if (typeof src === 'string') {
-      // External URLs (http/https) should be unoptimized
-      return src.startsWith('http://') || src.startsWith('https://');
-    }
-    return false;
-  };
+  }, []);
 
   if (!isMounted) {
     return (
@@ -38,7 +34,6 @@ export function ClientImage(props: ImageProps) {
     );
   }
 
-  // Error fallback
   if (imageError) {
     return (
       <div 
@@ -57,10 +52,11 @@ export function ClientImage(props: ImageProps) {
 
   return (
     <Image 
-      {...props} 
-      src={imageSrc}
-      unoptimized={shouldUnoptimize(imageSrc)}
+      {...props}
+      loading={props.loading || 'lazy'}
+      placeholder={props.placeholder || 'blur'}
+      blurDataURL={props.blurDataURL || 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='}
       onError={() => setImageError(true)}
     />
   );
-}
+});

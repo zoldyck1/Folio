@@ -1,16 +1,37 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/button';
 import { Eye, Send } from 'lucide-react';
 import { personalInfo } from '@/lib/data';
 import { SectionWrapper } from '@/components/shared/SectionWrapper';
-import AboutPage from './about/page';
-import SkillsPage from './skills/page';
-import ProjectsPage from './projects/page';
-import ResumePage from './resume/page';
-import ContactPage from './contact/page';
 import { ClientImage } from '@/components/shared/ClientImage';
 import { TypewriterText } from '@/components/shared/TypewriterText';
 
+// Dynamic imports for better performance
+const AboutPage = dynamic(() => import('./about/page'), {
+  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
+  ssr: false
+});
+
+const SkillsPage = dynamic(() => import('./skills/page'), {
+  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
+  ssr: false
+});
+
+const ProjectsPage = dynamic(() => import('./projects/page'), {
+  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
+  ssr: false
+});
+
+const ResumePage = dynamic(() => import('./resume/page'), {
+  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
+  ssr: false
+});
+
+const ContactPage = dynamic(() => import('./contact/page'), {
+  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
+  ssr: false
+});
 
 export default function Home() {
   return (
