@@ -36,11 +36,7 @@ export default function SkillsPage() {
                   className="cursor-target group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-lg p-5 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    {skill.iconUrl ? (
-                      <img src={skill.iconUrl} alt={skill.name} className="h-12 w-12 object-contain" />
-                    ) : (
-                      skill.icon && <skill.icon className="h-12 w-12 text-cyan-400" />
-                    )}
+                    <img src={skill.iconUrl} alt={skill.name} className="h-12 w-12 object-contain" />
                     <div className="flex-1">
                       <h4 className="text-sm font-semibold text-slate-200">{skill.name}</h4>
                       <span className="text-xs text-cyan-400 font-mono">{skill.percentage}%</span>

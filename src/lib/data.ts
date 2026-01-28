@@ -51,7 +51,7 @@ export const personalInfo = {
   ]
 };
 
-export const skills = [
+export const skills: Skill[] = [
   { name: "JavaScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", category: "Programming Languages", percentage: 70, color: '#FF6347' },
   { name: "TypeScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", category: "Programming Languages", percentage: 65, color: '#3178C6' },
   { name: "C++", iconUrl: "https://img.icons8.com/?size=100&id=40669&format=png&color=000000", category: "Programming Languages", percentage: 75, color: '#4682B4' },
