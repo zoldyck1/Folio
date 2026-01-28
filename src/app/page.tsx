@@ -1,37 +1,11 @@
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/button';
 import { Eye, Send } from 'lucide-react';
 import { personalInfo } from '@/lib/data';
 import { SectionWrapper } from '@/components/shared/SectionWrapper';
 import { ClientImage } from '@/components/shared/ClientImage';
 import { TypewriterText } from '@/components/shared/TypewriterText';
-
-// Dynamic imports for better performance
-const AboutPage = dynamic(() => import('./about/page'), {
-  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
-  ssr: false
-});
-
-const SkillsPage = dynamic(() => import('./skills/page'), {
-  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
-  ssr: false
-});
-
-const ProjectsPage = dynamic(() => import('./projects/page'), {
-  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
-  ssr: false
-});
-
-const ResumePage = dynamic(() => import('./resume/page'), {
-  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
-  ssr: false
-});
-
-const ContactPage = dynamic(() => import('./contact/page'), {
-  loading: () => <div className="h-96 bg-muted animate-pulse rounded-lg" />,
-  ssr: false
-});
+import { AboutPage, SkillsPage, ProjectsPage, ResumePage, ContactPage } from './PageComponents';
 
 export default function Home() {
   return (
@@ -58,7 +32,7 @@ export default function Home() {
 
               <div className="relative max-w-4xl mx-auto mb-12 group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-1000" />
-                <div className="relative bg-slate-900/80 backdrop-blur-sm border border-cyan-500/40 rounded-lg shadow-[0_0_50px_rgba(6,182,212,0.2)] overflow-hidden">
+                <div className="cursor-target relative bg-slate-900/80 backdrop-blur-sm border border-cyan-500/40 rounded-lg shadow-[0_0_50px_rgba(6,182,212,0.2)] overflow-hidden">
                   <div className="bg-gradient-to-r from-slate-800 to-slate-900 px-4 py-3 flex items-center gap-2 border-b border-cyan-500/20">
                     <div className="flex gap-2">
                       <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
@@ -100,12 +74,12 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-base shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all duration-300 border-0 px-8 py-6">
+                <Button asChild size="lg" className="cursor-target bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-base shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all duration-300 border-0 px-8 py-6">
                   <Link href="https://github.com/zoldyck1?tab=repositories" target="_blank" rel="noopener noreferrer">
                     View Projects <Eye className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-2 border-cyan-400 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-300 hover:text-white font-bold text-base shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all duration-300 px-8 py-6">
+                <Button asChild variant="outline" size="lg" className="cursor-target border-2 border-cyan-400 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-300 hover:text-white font-bold text-base shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all duration-300 px-8 py-6">
                   <Link href="/#contact">
                     Get In Touch <Send className="ml-2 h-5 w-5" />
                   </Link>

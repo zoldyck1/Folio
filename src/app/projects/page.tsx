@@ -77,13 +77,13 @@ export default function ProjectsPage() {
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10"
+            className="cursor-target pl-10"
           />
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         </div>
         
         <Select value={selectedTech} onValueChange={setSelectedTech}>
-          <SelectTrigger className="w-full md:w-[200px]">
+          <SelectTrigger className="cursor-target w-full md:w-[200px]">
             <SelectValue placeholder="Filter by tech" />
           </SelectTrigger>
           <SelectContent>

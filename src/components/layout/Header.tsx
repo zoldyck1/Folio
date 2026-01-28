@@ -33,7 +33,7 @@ export function Header() {
     <a
       href={href}
       className={cn(
-        "relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full",
+        "cursor-target relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full",
         "hover:bg-primary/10 hover:text-primary hover:scale-105",
         "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-primary/20 before:to-transparent",
         "before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100",
@@ -65,7 +65,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-xl border-b border-border" suppressHydrationWarning>
       <div className="container flex h-16 items-center" suppressHydrationWarning>
-        <Link href="/" className="mr-4 flex items-center gap-2">
+        <Link href="/" className="cursor-target mr-4 flex items-center gap-2">
           <Code2 className="h-6 w-6 text-primary" />
           <span className="font-bold text-lg text-primary">AL</span>
         </Link>
@@ -74,7 +74,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 group"
+              className="cursor-target relative text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 group"
               onClick={() => setIsSheetOpen(false)}
             >
               {item.label}
@@ -99,7 +99,7 @@ export function Header() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                    className="cursor-target text-muted-foreground hover:text-foreground transition-colors duration-200"
                     onClick={() => setIsSheetOpen(false)}
                   >
                     {item.label}

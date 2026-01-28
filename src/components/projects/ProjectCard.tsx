@@ -13,11 +13,11 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <Card className={`group overflow-hidden h-full flex flex-col animate-slide-up-fade transition-all duration-300 hover:-translate-y-1 bg-slate-900/40 backdrop-blur-sm border-slate-800/50 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]`}
+    <Card className={`cursor-target group overflow-hidden h-full flex flex-col animate-slide-up-fade transition-all duration-300 hover:-translate-y-1 bg-slate-900/40 backdrop-blur-sm border-slate-800/50 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]`}
       style={{ animationDelay: `${index * 100}ms` }}
       suppressHydrationWarning
     >
-      <div className="relative w-full h-48 sm:h-56 overflow-hidden" suppressHydrationWarning>
+      <div className="cursor-target relative w-full h-48 sm:h-56 overflow-hidden" suppressHydrationWarning>
         <ClientImage
           src={project.imageUrl}
           alt={project.title}
@@ -50,7 +50,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
         {project.id === "project-3" && (
           <Button
-            className="w-full mt-4 group/button text-foreground hover:text-foreground"
+            className="cursor-target w-full mt-4 group/button text-foreground hover:text-foreground"
             variant="outline"
             asChild
           >
@@ -67,7 +67,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         )}
         {project.id === "project-1" && (
           <Button
-            className="w-full mt-4 group/button text-foreground hover:text-foreground"
+            className="cursor-target w-full mt-4 group/button text-foreground hover:text-foreground"
             variant="outline"
             asChild
           >
@@ -84,7 +84,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         )}
         {project.id === "project-6" && (
           <Button
-            className="w-full mt-4 group/button text-foreground hover:text-foreground"
+            className="cursor-target w-full mt-4 group/button text-foreground hover:text-foreground"
             variant="outline"
             asChild
           >
