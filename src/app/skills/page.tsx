@@ -20,25 +20,25 @@ export default function SkillsPage() {
 
   return (
     <SectionWrapper id="skills" title="My Skillset" subtitle="Technologies and tools I work with.">
-      <div ref={sectionRef} className="relative space-y-16">
+      <div ref={sectionRef} className="relative space-y-12 md:space-y-16">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
         
         {skillCategories.map((category, catIndex) => (
           <div key={category} className="relative" style={{ animationDelay: `${catIndex * 100}ms` }}>
-            <h3 className="text-xl font-bold mb-8 text-cyan-400 tracking-wider uppercase flex items-center gap-3">
-              <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+            <h3 className="text-lg md:text-xl font-bold mb-6 md:mb-8 text-cyan-400 tracking-wider uppercase flex items-center gap-2 md:gap-3">
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-cyan-400 rounded-full animate-pulse" />
               {category}
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
               {skills.filter(s => s.category === category).map((skill) => (
                 <div
                   key={skill.name}
-                  className="cursor-target group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-lg p-5 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                  className="cursor-target group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-lg p-4 md:p-5 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
                 >
-                  <div className="flex items-center gap-4 mb-4">
-                    <img src={skill.iconUrl} alt={skill.name} className="h-12 w-12 object-contain" />
-                    <div className="flex-1">
-                      <h4 className="text-sm font-semibold text-slate-200">{skill.name}</h4>
+                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                    <img src={skill.iconUrl} alt={skill.name} className="h-10 w-10 md:h-12 md:w-12 object-contain" />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs md:text-sm font-semibold text-slate-200 truncate">{skill.name}</h4>
                       <span className="text-xs text-cyan-400 font-mono">{skill.percentage}%</span>
                     </div>
                   </div>

@@ -9,12 +9,10 @@ import Antigravity from '@/components/shared/Antigravity';
 
 // Dynamic imports for better performance
 const Header = dynamic(() => import('@/components/layout/Header').then(mod => ({ default: mod.Header })), {
-  loading: () => <div className="h-16 bg-background border-b" />,
   ssr: true
 });
 
 const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => ({ default: mod.Footer })), {
-  loading: () => <div className="h-16 bg-background border-t" />,
   ssr: true
 });
 
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
   description: 'My professional portfolio-website.',
   keywords: ['portfolio', 'developer', 'react', 'nextjs', 'typescript'],
   authors: [{ name: 'Ayoub Loulaji' }],
-  viewport: 'width=device-width, initial-scale=1',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes',
   robots: 'index, follow',
 };
 
@@ -55,9 +53,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
             <Antigravity
-              count={300}
+              count={150}
               magnetRadius={8}
               ringRadius={12}
               waveSpeed={0.9}
@@ -75,13 +73,9 @@ export default function RootLayout({
             />
           </div>
           <div className="flex flex-col min-h-screen relative z-10" suppressHydrationWarning>
-            <NoSSR fallback={<div className="h-16 bg-background border-b" />}>
-              <Header />
-            </NoSSR>
+            <Header />
             <main className="flex-grow" suppressHydrationWarning>{children}</main>
-            <NoSSR fallback={<div className="h-16 bg-background border-t" />}>
-              <Footer />
-            </NoSSR>
+            <Footer />
             <ScrollToTopButton />
           </div>
           <Toaster />

@@ -64,17 +64,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-xl border-b border-border" suppressHydrationWarning>
-      <div className="container flex h-16 items-center" suppressHydrationWarning>
-        <Link href="/" className="cursor-target mr-4 flex items-center gap-2">
-          <Code2 className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg text-primary">AL</span>
+      <div className="container flex h-14 md:h-16 items-center px-4" suppressHydrationWarning>
+        <Link href="/" className="cursor-target mr-3 md:mr-4 flex items-center gap-1.5 md:gap-2">
+          <Code2 className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+          <span className="font-bold text-base md:text-lg text-primary">AL</span>
         </Link>
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium flex-1 justify-center" suppressHydrationWarning>
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-8 text-xs lg:text-sm font-medium flex-1 justify-center" suppressHydrationWarning>
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="cursor-target relative text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 group"
+              className="cursor-target relative text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 group whitespace-nowrap"
               onClick={() => setIsSheetOpen(false)}
             >
               {item.label}
@@ -82,19 +82,19 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center space-x-4" suppressHydrationWarning>
+        <div className="flex items-center space-x-2 md:space-x-4 ml-auto" suppressHydrationWarning>
           <div className="hidden md:block" suppressHydrationWarning>
             <ThemeToggle />
           </div>
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="text-muted-foreground">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" size="icon" className="text-muted-foreground h-9 w-9">
+                <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-background border-border">
-              <nav className="grid gap-6 text-lg font-medium mt-8" suppressHydrationWarning>
+            <SheetContent side="right" className="bg-background border-border w-[280px] sm:w-[320px]">
+              <nav className="grid gap-4 md:gap-6 text-base md:text-lg font-medium mt-8" suppressHydrationWarning>
                 {navItems.map((item) => (
                   <a
                     key={item.href}

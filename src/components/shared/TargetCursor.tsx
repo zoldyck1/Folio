@@ -21,6 +21,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
   const cursorRef = useRef<HTMLDivElement>(null);
   const cornersRef = useRef<NodeListOf<HTMLDivElement> | null>(null);
   const dotRef = useRef<HTMLDivElement>(null);
+  const rotationRef = useRef<{ current: number }>({ current: 0 });
 
   const isActiveRef = useRef(false);
   const targetCornerPositionsRef = useRef<{ x: number; y: number }[] | null>(null);
@@ -37,7 +38,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     return (hasTouchScreen && isSmallScreen) || isMobileUserAgent;
   }, []);
 
-  const constants = useMemo(() => ({ borderWidth: 2, cornerSize: 8 }), []);
+  const constants = useMemo(() => ({ borderWidth: 2, cornerSize: 6 }), []);
 
   const moveCursor = useCallback((x: number, y: number) => {
     if (!cursorRef.current) return;
@@ -72,6 +73,15 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       x: window.innerWidth / 2,
       y: window.innerHeight / 2
     });
+
+    // Idle rotation animation
+    const rotationTicker = () => {
+      if (!isActiveRef.current && cursorRef.current) {
+        rotationRef.current.current += 0.5;
+        gsap.set(cursorRef.current, { rotation: rotationRef.current.current });
+      }
+    };
+    gsap.ticker.add(rotationTicker);
 
 
 
@@ -179,6 +189,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       gsap.ticker.add(tickerFnRef.current!);
 
       gsap.to(activeStrengthRef.current, { current: 1, duration: hoverDuration, ease: 'power2.out' });
+      gsap.to(cursorRef.current, { rotation: 0, duration: 0.3, ease: 'power2.out' });
 
       corners.forEach((corner, i) => {
         gsap.to(corner, {
@@ -200,10 +211,10 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
           gsap.killTweensOf(corners);
           const { cornerSize } = constants;
           const positions = [
-            { x: -cornerSize * 1.2, y: -cornerSize * 1.2 },
-            { x: cornerSize * 0.2, y: -cornerSize * 1.2 },
-            { x: cornerSize * 0.2, y: cornerSize * 0.2 },
-            { x: -cornerSize * 1.2, y: cornerSize * 0.2 }
+            { x: -7, y: -7 },
+            { x: 7, y: -7 },
+            { x: 7, y: 7 },
+            { x: -7, y: 7 }
           ];
           const tl = gsap.timeline();
           corners.forEach((corner, index) => {
@@ -246,6 +257,8 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       if (tickerFnRef.current) {
         gsap.ticker.remove(tickerFnRef.current);
       }
+      
+      gsap.ticker.remove(rotationTicker);
     };
   }, [isMobile, hideDefaultCursor, spinDuration, hoverDuration, parallaxOn, targetSelector, constants, moveCursor]);
 
@@ -260,41 +273,41 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       {/* Center dot */}
       <div
         ref={dotRef}
-        className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+        className="absolute w-1.5 h-1.5 bg-cyan-400 rounded-full"
         style={{
-          left: '50%',
-          top: '50%',
+          left: '0',
+          top: '0',
           transform: 'translate(-50%, -50%)'
         }}
       />
       
       {/* Four corners */}
       <div
-        className="target-cursor-corner absolute w-2 h-2 border-t border-l border-cyan-400"
+        className="target-cursor-corner absolute w-1.5 h-1.5 border-t-2 border-l-2 border-cyan-400"
         style={{
-          left: '-10px',
-          top: '-10px'
+          left: '-7px',
+          top: '-7px'
         }}
       />
       <div
-        className="target-cursor-corner absolute w-2 h-2 border-t border-r border-cyan-400"
+        className="target-cursor-corner absolute w-1.5 h-1.5 border-t-2 border-r-2 border-cyan-400"
         style={{
-          right: '-10px',
-          top: '-10px'
+          right: '-7px',
+          top: '-7px'
         }}
       />
       <div
-        className="target-cursor-corner absolute w-2 h-2 border-b border-r border-cyan-400"
+        className="target-cursor-corner absolute w-1.5 h-1.5 border-b-2 border-r-2 border-cyan-400"
         style={{
-          right: '-10px',
-          bottom: '-10px'
+          right: '-7px',
+          bottom: '-7px'
         }}
       />
       <div
-        className="target-cursor-corner absolute w-2 h-2 border-b border-l border-cyan-400"
+        className="target-cursor-corner absolute w-1.5 h-1.5 border-b-2 border-l-2 border-cyan-400"
         style={{
-          left: '-10px',
-          bottom: '-10px'
+          left: '-7px',
+          bottom: '-7px'
         }}
       />
     </div>

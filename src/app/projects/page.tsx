@@ -70,25 +70,25 @@ export default function ProjectsPage() {
 
   return (
     <SectionWrapper id="projects" title="My Projects" subtitle="A selection of my work, filterable by technology or search.">
-      <div className="mb-8 flex flex-col md:flex-row gap-4 items-center" suppressHydrationWarning>
+      <div className="mb-6 md:mb-8 flex flex-col md:flex-row gap-3 md:gap-4 items-center" suppressHydrationWarning>
         <div className="relative w-full md:max-w-xs" suppressHydrationWarning>
           <Input 
             type="text"
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="cursor-target pl-10"
+            className="cursor-target pl-9 md:pl-10 text-sm md:text-base"
           />
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          <Search className="absolute left-2.5 md:left-3 top-1/2 -translate-y-1/2 h-4 w-4 md:h-5 md:w-5 text-muted-foreground" />
         </div>
         
         <Select value={selectedTech} onValueChange={setSelectedTech}>
-          <SelectTrigger className="cursor-target w-full md:w-[200px]">
+          <SelectTrigger className="cursor-target w-full md:w-[200px] text-sm md:text-base">
             <SelectValue placeholder="Filter by tech" />
           </SelectTrigger>
           <SelectContent>
             {techOptions.map(tech => (
-              <SelectItem key={tech} value={tech}>
+              <SelectItem key={tech} value={tech} className="text-sm md:text-base">
                 {tech === 'all' ? 'All Technologies' : tech}
               </SelectItem>
             ))}
@@ -97,13 +97,13 @@ export default function ProjectsPage() {
       </div>
 
       {projects.length > 0 ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" suppressHydrationWarning>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" suppressHydrationWarning>
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       ) : (
-        <p className="text-center text-muted-foreground text-lg py-12">
+        <p className="text-center text-muted-foreground text-base md:text-lg py-12">
           No projects found matching your criteria. Try adjusting your filters.
         </p>
       )}
